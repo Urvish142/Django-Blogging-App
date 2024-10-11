@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="card bg-light" style="border: 2px solid rgba(0,0,0,.125)">
+	<article class="card-body mx-auto" style="width: 80%;">
+		<h4 class="card-title mt-3 text-center">Create Your New Post !!!</h4>
+		<form method="POST"> {% csrf_token %}
+			{{ form|crispy }}
+			<div class="form-group">
+				<button type="submit" class="btn btn-primary btn-block">POST</button>
+			</div> <!-- form-group// -->
+		</form>
+	</article>
+</div> <!-- card.// -->
+{% endblock %}

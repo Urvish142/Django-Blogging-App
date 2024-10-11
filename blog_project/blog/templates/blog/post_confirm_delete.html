@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="card bg-light">
+	<article class="card-body mx-auto" style="max-width: 400px;">
+		<h4 class="card-title mt-3 text-center">Delete Post !!!</h4>
+		<h5 class="card-title mt-3 text-center">You sure want to delete {{post.title}} post ???</h5>
+		<form method="POST"> {% csrf_token %}
+			<div class="form-group">
+				<a type="submit" class="btn btn-outline-danger btn-block">Sure, Delete</a>
+				<a href="{% url 'post-detail' object.id %}" class="btn btn-outline-primary btn-block">Noooooo !</a>
+			</div> <!-- form-group// -->
+		</form>
+	</article>
+</div> <!-- card.// -->
+{% endblock %}

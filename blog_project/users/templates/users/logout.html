@@ -1,0 +1,9 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<div class="card bg-light">
+	<article class="card-body mx-auto" style="max-width: 400px;">
+		<h4 class="card-title mt-3 text-center">You have been logged out!!!</h4>
+		<p class="text-center"><a href="{% url 'login' %}">Log In Again</a></p>
+	</article>
+</div> <!-- card.// -->
+{% endblock %}

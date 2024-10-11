@@ -1,0 +1,24 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="card bg-light">
+	<article class="card-body mx-auto" style="max-width: 400px;">
+		<div class="card" style="width: 18rem;">
+			<img class="card-img-top" src="{{ user.profile.image.url }}" alt="Card image cap">
+			<div class="card-body">
+				<h3 class="card-title">{{ user.username }}</h3>
+				<h5 class="card-title">{{ user.email }}</h5>
+			</div>
+		</div>
+		<form method="POST" enctype="multipart/form-data"> {% csrf_token %}
+			<h3 class="card-title">Profile Info</h3>
+			{{ u_form|crispy }}
+			{{ p_form|crispy }}
+			<div class="form-group">
+				<button type="submit" class="btn btn-primary btn-block">Update</button>
+			</div> <!-- form-group// -->
+		</form>
+	</article>
+</div> <!-- card.// -->
+
+{% endblock %}
